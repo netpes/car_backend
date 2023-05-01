@@ -14,7 +14,7 @@ app.engine("html", require("ejs").renderFile);
 // Put these statements before you define any routes.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: ["https://7ba50f4d.carproject.pages.dev/", "*"]}));
 app.use("/",user)
 
 
