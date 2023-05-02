@@ -7,8 +7,10 @@
     "nodemon": "^2.0.20",
     "puppeteer": "^19.5.2",
     "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-recaptcha": "^3.6.6"
-  }, "scripts": {
-  "start": "nodemon server.js"
-}
+    "puppeteer-extra-plugin-recaptcha": "^3.6.6",
+    "user-agents": "^1.0.1367"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  }
 }
