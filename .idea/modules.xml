@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../מסמכים/GitHub/carProject/.idea/carProject.iml" filepath="$PROJECT_DIR$/../../../מסמכים/GitHub/carProject/.idea/carProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/car_backend.iml" filepath="$PROJECT_DIR$/.idea/car_backend.iml" />
     </modules>
   </component>
