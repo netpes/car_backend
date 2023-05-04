@@ -11,7 +11,7 @@ const user = require("./views/user")
 // Put these statements before you define any routes.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors({origin: "https://7ba50f4d.carproject.pages.dev/"}));
+app.use(cors({origin: "https://carproject.pages.dev/"}));
 app.use("/",user)
 
 
