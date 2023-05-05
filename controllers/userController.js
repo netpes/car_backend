@@ -8,10 +8,10 @@ async function Libra(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false
+      headless: true
     });
     const page = await browser.newPage();
-    await page.goto("https://rb.gy/fob7e4");
+    await page.goto("https://rb.gy/fob7e4", { timeout: 60000 });
     await page.type('#CarNumber-0', input)
     await Promise.all([
       page.$eval(`body > div.bg-strip.form-strip.form-strip-with-bg > form > div.form-row.second-row > button`, element =>
@@ -35,10 +35,10 @@ async function Migdal(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false
+      headless: true
     });
     const page = await browser.newPage();
-    await page?.goto("https://www.migdal.co.il/car-insurance/support/third-party-policy-examination")
+    await page?.goto("https://www.migdal.co.il/car-insurance/support/third-party-policy-examination", { timeout: 60000 })
     await page.type("#eventDate", "01052022")
     await page.type("#licenseNum", input)
     const submit = await page.waitForXPath("/html/body/div[5]/div[2]/div/app/car-policy-check/div/div/form/button")
@@ -57,10 +57,10 @@ async function Aylon(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false
+      headless: true
     });
     const page = await browser.newPage();
-    await page?.goto("https://www.ayalon-ins.co.il/third_party/")
+    await page?.goto("https://www.ayalon-ins.co.il/third_party/", { timeout: 60000 })
     await page.type("#ctl00_ctl00_MainPageContentPlaceHolder_SVSrvPrezZoneHolder0_ctl00_txtDate", "01052022")
     await page.type("#ctl00_ctl00_MainPageContentPlaceHolder_SVSrvPrezZoneHolder0_ctl00_txtCarLicensing", input)
     await page.click("#ctl00_ctl00_MainPageContentPlaceHolder_SVSrvPrezZoneHolder0_ctl00_cmdCheck")
@@ -78,7 +78,7 @@ async function Haklai(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false
+      headless: true
     });
     const page = await browser.newPage();
     await page?.goto("https://www.bth.co.il/check-insurance/", {waitUntil: 'networkidle0'})
@@ -111,11 +111,11 @@ async function Wesure(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: null
     });
     const page = await browser.newPage();
-    await page?.goto("https://we-sure.co.il/%D7%91%D7%93%D7%99%D7%A7%D7%AA-%D7%AA%D7%95%D7%A7%D7%A3-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97/")
+    await page?.goto("https://we-sure.co.il/%D7%91%D7%93%D7%99%D7%A7%D7%AA-%D7%AA%D7%95%D7%A7%D7%A3-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97/",{ timeout: 60000 })
     await page.type("#accDate", "01/02/2022")
     await page.type("#carId", input)
 
@@ -136,11 +136,11 @@ async function Menora(req){
     const input = req
     console.log(input)
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: null
     });
     const page = await browser.newPage();
-    await page?.goto("https://www.menoramivt.co.il/checkclaimstatus/")
+    await page?.goto("https://www.menoramivt.co.il/checkclaimstatus/", { timeout: 60000 })
     await page.setUserAgent(userAgent?.random().toString())
     await page.type("#insuredId", "211814686")
     await page.type("#carNumber", input)
@@ -176,7 +176,7 @@ module.exports = {
     try {
       const page = await browser.newPage();
       await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36');
-      await page?.goto("https://www.hcsra.co.il/Pages/covercheckthirdparty.aspx")
+      await page?.goto("https://www.hcsra.co.il/Pages/covercheckthirdparty.aspx", { timeout: 60000 })
 
       await page.type('#licensing_number', input);
       await page.click("#accidentDate")
